@@ -16,4 +16,51 @@ liveDisplayVal = (event) => {
 displayVal += buttonText;
 displayValElem.innerText = displayVal;
 
-operationPerformance = (event) => {}
+operationPerformance = (event) => {
+    let operator = event.target.innerText
+
+        switch (operator) {
+            case "+":
+                pendingVal = displayVal;
+                display = '0';
+                displayValElem.innerText = displayVal;
+                evalStringArry.push(pendingVal);
+                evalStringArry.push('+');
+                break;
+
+            case "-":
+                pendingVal = displayVal;
+                display = '0';
+                displayValElem.innerText = displayVal;
+                evalStringArry.push(pendingVal);
+                evalStringArry.push('-');
+                break;
+
+            case "*":
+                pendingVal = displayVal;
+                display = '0';
+                displayValElem.innerText = displayVal;
+                evalStringArry.push(pendingVal);
+                evalStringArry.push('*');
+                break;
+
+            case "/":
+                pendingVal = displayVal;
+                display = '0';
+                displayValElem.innerText = displayVal;
+                evalStringArry.push(pendingVal);
+                evalStringArry.push('/');
+                break;
+
+            case "=":
+                evalStringArry.push(displayVal);
+                let evaluation = eval(evalStringArry.join(' ')); //switches to string
+                displayVal = evaluation + '';
+                console.log(typeof displayVal);
+                displayValElem.innerText = displayVal
+                evalStringArry = []; //clears arry
+                break;
+            default:
+                break;
+        }
+}
