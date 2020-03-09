@@ -43,19 +43,7 @@ h2 {
 	width: 600px;
 }
 
-.calculator-number {
-	border-color: lightgrey;
-	border-style: solid;
-	cursor: pointer;
-	display: inline;
-	font-size: 4em;
-	line-height: 120px;
-	padding: 20px 40px;
-	height: 150px;
-	width: 150px;
-}
-
-.calculator-operator {
+.calculator-button {
 	border-color: lightgrey;
 	border-style: solid;
 	cursor: pointer;
