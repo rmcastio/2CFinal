@@ -1,89 +1,58 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
 }
 
-body {
-	font-size: 18px;
-	padding: .5em 2em;
-	text-align: center;
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C)
 }
 
-h1 {
-	font-size: 3em;
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-h2 {
-	font-size: 2.25em;
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255, .75);
 }
 
-#container {
-	margin: 2em auto;
-	width: 100%;
+.calculator-grid > button:hover {
+    background-color: rgba(255,255,255, .90);
 }
 
-#calculator {
-	display: grid;
-	grid-template-columns: repeat(4, 150px);
-	margin: 25px auto;
-	width: 600px;
+.span-two {
+    grid-column: span 2;
 }
 
-#display {
-	grid-column-start: 1;
-	grid-column-end: 5;
-	border-color: lightgrey;
-	border-style: solid;
-	display: inline;
-	font-size: 1.5em;
-	line-height: 120px;
-	padding: 20px 40px;
-	height: 150px;
-	width: 600px;
+.output {
+    grid-column: 1 / -1;
+    background: rgba(0,0,0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.calculator-number {
-	border-color: lightgrey;
-	border-style: solid;
-	cursor: pointer;
-	display: inline;
-	font-size: 4em;
-	line-height: 120px;
-	padding: 20px 40px;
-	height: 150px;
-	width: 150px;
+.output .previous-operand {
+    color: rgba(255,255,255, .75);
+    font-size: 1.5rem;
 }
 
-.calculator-operator {
-	border-color: lightgrey;
-	border-style: solid;
-	cursor: pointer;
-	display: inline;
-	font-size: 4em;
-	line-height: 120px;
-	padding: 20px 40px;
-	height: 150px;
-	width: 150px;
-}
-
-.calculatorBtn-other {
-	border-color: lightgrey;
-	border-style: solid;
-	cursor: pointer;
-	display: inline;
-	font-size: 4em;
-	line-height: 120px;
-	padding: 20px 40px;
-	height: 150px;
-	width: 150px;
-}
-
-.double-width {
-	padding: 20px 30px;
-	width: 300px;
-}
-
-.full-width {
-	width: 600px;
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
 }

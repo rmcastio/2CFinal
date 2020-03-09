@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Calculator</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-	<header>
-		<h1>Simple Calculator</h1>
-	</header>
-	<main>
-		<div id="container">
-			<div id="calculator">
-				<div id="display" class="full-width"></div>
-				<div id=-number-7" class="calculator-number">7</div>
-				<div id=-number-8" class="calculator-number">8</div>
-				<div id=-number-9" class="calculator-number">9</div>
-				<div id=-number-plus" class="calculator-operator">+</div>
-				<div id=-number-4" class="calculator-number">4</div>
-				<div id=-number-5" class="calculator-number">5</div>
-				<div id=-number-6" class="calculator-number">6</div>
-				<div id=-number-minus" class="calculator-operator">-</div>
-				<div id=-number-1" class="calculator-number">1</div>
-				<div id=-number-2" class="calculator-number">2</div>
-				<div id=-number-3" class="calculator-number">3</div>
-				<div id=-number-multiply" class="calculator-operator">*</div>
-				<div id=-number-clear" class="calculatorBtn-other">C</div>
-				<div id=-number-0" class="calculator-number">0</div>
-				<div id=-number-equals" class="calculator-operator">=</div>
-				<div id=-number-divide" class="calculator-operator">/</div>
-				<div id=-number-decimal" class="calculatorBtn-other">.</div>
-			</div>
-			<div id="last-result">
-				<h2>Last Expression:</h2>
-				<span id="last-result-display"></span>
-			</div>
-		</div>
-	</main>
-	<script src="script.js"></script>
-</body>
-
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" charset="utf-8" defer></script>
+    </head>
+    <body>
+<div class="calculator-grid">
+    <div class="output">
+        <div data-previous-operand class="previous-operand"></div>
+        <div data-current-operand class="current-operand"></div>
+    </div>
+    <button data-all-clear class="span-two">AC</button>
+    <button data-delete>DEL</button>
+    <button data-operation>÷</button>
+    <button data-number>1</button>
+    <button data-number>2</button>
+    <button data-number>3</button>
+    <button data-operation>*</button>
+    <button data-number>4</button>
+    <button data-number>5</button>
+    <button data-number>6</button>
+    <button data-operation>+</button>
+    <button data-number>7</button>
+    <button data-number>8</button>
+    <button data-number>9</button>
+    <button data-operation>-</button>
+    <button data-number>.</button>
+    <button data-number>0</button>
+    <button data-equals class="span-two">=</button>
+</div>
+    </body>
 </html>
