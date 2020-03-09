@@ -1,10 +1,19 @@
-let button1 = document.getElementById("button-1")
-let button2 = document.getElementById("button-2")
-let button3 = document.getElementById("button-3")
-let button4 = document.getElementById("button-4")
-let button5 = document.getElementById("button-5")
-let button6 = document.getElementById("button-6")
-let button7 = document.getElementById("button-7")
-let button8 = document.getElementById("button-8")
-let button9 = document.getElementById("button-9")
-let button0 = document.getElementById("button-0")
+const displayValElem = document.getElementById("display");
+const buttonNumbers = document.getElementsByClassName("calculator-number");
+const buttonOperators = document.getElementsByClassName("calculator-operator")
+
+let displayVal = '0';
+let pendingVal;
+let evalStringArry = [];
+
+liveDisplayVal = (event) => {
+    let buttonText = event.target.innerText;
+    if(displayVal === "0") {
+        displayVal = "";
+    }
+}
+
+displayVal += buttonText;
+displayValElem.innerText = displayVal;
+
+operationPerformance = (event) => {}
