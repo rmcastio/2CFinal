@@ -64,3 +64,11 @@ operationPerformance = (event) => {
                 break;
         }
 }
+
+for(let i = 0; i < buttonNumbers.length; i++) {
+    buttonNumbers[i].addEventListener('click', liveDisplayVal)
+}
+
+for(let i = 0; i < buttonOperators.length; i++) {
+    buttonOperators[i].addEventListener('click', operationPerformance)
+}
