@@ -19,6 +19,7 @@ let buttonMinus = document.getElementById("button-minus");
 let buttonMultiply = document.getElementById("button-multiply");
 let buttonDivide = document.getElementById("button-divide");
 let buttonEquals = document.getElementById("button-equals");
+let buttonClear = document.getElementById("button-clear");
 
 
 
@@ -48,4 +49,15 @@ function displayOperator() {
 myDisplay.innerText += this.innerText;
 }
 
+buttonClear.onclick = function () {
+    myDisplay.innerHTML = "";
+};
 
+
+/*switch (numbOperators) {
+    case "button-plus":
+        result = numbButtons + numbButtons;
+        break;
+    default
+    console.log(button-plus)
+}*/
