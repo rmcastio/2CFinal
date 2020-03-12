@@ -30,7 +30,8 @@ let numbButtons = [
   buttonSix,
   buttonSeven,
   buttonEight,
-  buttonNine];
+  buttonNine
+];
 
 for (let i = 0; i < numbButtons.length; i++) {
   numbButtons[i].addEventListener("click", displayNumber);
@@ -46,10 +47,12 @@ let result = null;
 function displayNumber() {
   console.log(this.innerText);
   if (!firstNumberEntered) {
+    if(!firstNumb)
+      myDisplay.innerHTML = "";
     firstNumb += this.innerText;
     myDisplay.innerText += this.innerText;
   } else {
-      secondNumberEntered = true;
+    secondNumberEntered = true;
     secondNumb += this.innerText;
     myDisplay.innerText += this.innerText;
   }
@@ -104,20 +107,16 @@ function calculate() {
         break;
     }
     displayResult();
-    firstNumb = "";
+  }
+}
+
+function displayResult() {
+  myDisplay.innerText += " = ";
+  myDisplay.innerText += result;
+  firstNumb = "";
   secondNumb = "";
   firstNumberEntered = false;
   secondNumberEntered = false;
   operator = "";
   result = null;
-    // Update Display = and result
-    // Remove Event Listenrs from Numbers and operators & equals.
-    // clear needs readd all event listeners.
-  }
 }
-
-function displayResult() {
-        myDisplay.innerText += " = ";
-        myDisplay.innerText += result;
-}
-
