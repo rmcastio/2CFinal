@@ -20,58 +20,99 @@ let buttonDivide = document.getElementById("button-divide");
 let buttonEquals = document.getElementById("button-equals");
 let buttonClear = document.getElementById("button-clear");
 
-
-
-
-let numbButtons = [ buttonZero, buttonOne, buttonTwo,
-buttonThree, buttonFour, buttonFive, 
-buttonSix, buttonSeven, buttonEight, buttonNine];
+let numbButtons = [
+  buttonZero,
+  buttonOne,
+  buttonTwo,
+  buttonThree,
+  buttonFour,
+  buttonFive,
+  buttonSix,
+  buttonSeven,
+  buttonEight,
+  buttonNine
+];
 
 for (let i = 0; i < numbButtons.length; i++) {
-    numbButtons[i].addEventListener("click", displayNumber)
+  numbButtons[i].addEventListener("click", displayNumber);
 }
+
+let firstNumb = "";
+let secondNumb = "";
+let firstNumberEntered = false;
+let secondNumberEntered = false;
+let operator = "";
+let result = null;
 
 function displayNumber() {
-    console.log(this.innerText);
-myDisplay.innerText += this.innerText;
+  console.log(this.innerText);
+  if (!firstNumberEntered) {
+    firstNumb += this.innerText;
+    myDisplay.innerText += this.innerText;
+  } else {
+      secondNumberEntered = true;
+    secondNumb += this.innerText;
+    myDisplay.innerText += this.innerText;
+  }
 }
 
-let numbOperators = [ buttonPlus, buttonMinus, 
-    buttonDivide, buttonMultiply];
+let numbOperators = [buttonPlus, buttonMinus, buttonDivide, buttonMultiply];
 
 for (let i = 0; i < numbOperators.length; i++) {
-    numbOperators[i].addEventListener("click", displayOperator)
+  numbOperators[i].addEventListener("click", displayOperator);
 }
 
 function displayOperator() {
+  console.log(this.innerText);
+  if (firstNumb != "") {
+    myDisplay.innerText += this.innerText;
+    operator = this.innerText;
+    firstNumberEntered = true;
+  }
+}
+
+buttonClear.addEventListener("click", clear);
+
+function clear() {
+  myDisplay.innerHTML = "";
+  firstNumb = "";
+  secondNumb = "";
+  firstNumberEntered = false;
+  secondNumberEntered = false;
+  operator = "";
+  result = null;
+}
+
+buttonEquals.addEventListener("click", calculate);
+
+function calculate() {
+  if (firstNumberEntered && secondNumberEntered) {
+    switch (operator) {
+      case "+":
+        result = parseInt(firstNumb) + parseInt(secondNumb);
+        console.log(result)
+        break;
+
+      case "-":
+        result = parseInt(firstNumb) - parseInt(secondNumb);
+        break;
+
+      case "/":
+        result = parseInt(firstNumb) / parseInt(secondNumb);
+        break;
+
+      case "*":
+        result = parseInt(firstNumb) * parseInt(secondNumb);
+        break;
+    }
+    // Update Display = and result
+    // Remove Event Listenrs from Numbers and operators & equals.
+    // clear needs readd all event listeners.
+  }
+}
+
+function displayResult() {
     console.log(this.innerText);
-myDisplay.innerText += this.innerText;
-}
-
-buttonClear.onclick = function () {
-    myDisplay.innerHTML = "";
-};
-
-
-let numberValue = numbButtons[i];
-switch (operation) {
-    case "button-plus"
     
-    break;
-
-    case "button-minus"
-    break;
-
-    case "button-divide"
-    break;
-
-    case "button-multiply"
-
-    break;
-
-    case "button-equals"
-
-    break;
-    default:
-    break;
 }
+
