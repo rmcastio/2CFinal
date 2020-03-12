@@ -1,7 +1,6 @@
 "use strict";
 
-let myButtons = document.getElementsByClassName("calculator-button")
-let myLastResult = document.getElementById("last-result");
+let myLastResult = document.getElementsByTagName("span");
 let myDisplay = document.getElementById("display");
 
 let buttonZero = document.getElementById("button-0");
@@ -54,10 +53,25 @@ buttonClear.onclick = function () {
 };
 
 
-/*switch (numbOperators) {
-    case "button-plus":
-        result = numbButtons + numbButtons;
-        break;
-    default
-    console.log(button-plus)
-}*/
+let numberValue = numbButtons[i];
+switch (operation) {
+    case "button-plus"
+    
+    break;
+
+    case "button-minus"
+    break;
+
+    case "button-divide"
+    break;
+
+    case "button-multiply"
+
+    break;
+
+    case "button-equals"
+
+    break;
+    default:
+    break;
+}
