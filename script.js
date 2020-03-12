@@ -1,6 +1,6 @@
 "use strict";
 
-let myLastResult = document.getElementsByTagName("span");
+//let myLastResult = document.getElementByTagName("span");
 let myDisplay = document.getElementById("display");
 
 let buttonZero = document.getElementById("button-0");
@@ -30,8 +30,7 @@ let numbButtons = [
   buttonSix,
   buttonSeven,
   buttonEight,
-  buttonNine
-];
+  buttonNine];
 
 for (let i = 0; i < numbButtons.length; i++) {
   numbButtons[i].addEventListener("click", displayNumber);
@@ -83,14 +82,13 @@ function clear() {
   result = null;
 }
 
-buttonEquals.addEventListener("click", calculate);
+buttonEquals.addEventListener("click", calculate, displayResult);
 
 function calculate() {
   if (firstNumberEntered && secondNumberEntered) {
     switch (operator) {
       case "+":
         result = parseInt(firstNumb) + parseInt(secondNumb);
-        console.log(result)
         break;
 
       case "-":
@@ -105,6 +103,13 @@ function calculate() {
         result = parseInt(firstNumb) * parseInt(secondNumb);
         break;
     }
+    displayResult();
+    firstNumb = "";
+  secondNumb = "";
+  firstNumberEntered = false;
+  secondNumberEntered = false;
+  operator = "";
+  result = null;
     // Update Display = and result
     // Remove Event Listenrs from Numbers and operators & equals.
     // clear needs readd all event listeners.
@@ -112,7 +117,7 @@ function calculate() {
 }
 
 function displayResult() {
-    console.log(this.innerText);
-    
+        myDisplay.innerText += " = ";
+        myDisplay.innerText += result;
 }
 
